@@ -2,7 +2,8 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 import Login from '../Login/Login'
 
@@ -16,7 +17,8 @@ export default class Home extends React.Component {
     console.log('Home page')
     return (
       <View style={styles.container}>
-        <Text>Home Page</Text>
+        <Text style={styles.homeText}>Home Page</Text>
+        <Image source={require('../../images/icons/pointer.jpg')} />
       </View>
     );
   }
@@ -28,4 +30,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  homeText: {
+    fontSize: 100,
+    height: 400,
+    width: 100,
+    color: 'red'
+  }
 });

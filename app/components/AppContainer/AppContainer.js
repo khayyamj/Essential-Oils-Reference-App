@@ -21,7 +21,9 @@ class AppContainer extends Component {
 
   render () {
     return (
-      <TabBarIOS style={styles.container}>
+      <TabBarIOS
+        itemPositioning='fill'
+        style={styles.container}>
         <TabBarIOS.Item
           title='Home'
           selected={this.state.selectedTab === 'home'}
@@ -81,7 +83,9 @@ class AppContainer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-
+    backgroundColor: 'black',
+    height: 100,
+    borderColor: 'blue'
   }
 });
 
