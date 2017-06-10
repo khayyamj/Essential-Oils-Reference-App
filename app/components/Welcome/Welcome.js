@@ -6,6 +6,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import Login from '../Login/Login'
+import AppContainer from '../AppContainer/AppContainer'
 
 export default class Welcome extends React.Component {
   constructor () {
@@ -14,17 +15,17 @@ export default class Welcome extends React.Component {
       isLoggedIn: false
     }
   }
+  onLogin() {
+    this.setState({ isLoggedIn: true })
+  }
   render() {
     if (!this.state.isLoggedIn) {
       return (
-        <Login />
+        <Login onLogin={this.onLogin.bind(this)}/>
       )
     }
     return (
-      <View style={styles.container}>
-        <Text>Add Oils Here</Text>
-
-      </View>
+      <AppContainer />
     );
   }
 }

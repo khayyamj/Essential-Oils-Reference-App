@@ -18,6 +18,7 @@ export default class Login extends Component {
   }
   onLoginPressed() {
     console.log('Attempting to login as ', this.state.name, ' and email: ', this.state.email)
+    this.props.onLogin()
   }
 
   render() {
