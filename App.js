@@ -1,19 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Welcome from './app/components/Welcome/Welcome'
+import AppContainer from './app/components/AppContainer/AppContainer'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Welcome />
-      </View>
+        <AppContainer />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    
-  }
-});

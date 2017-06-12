@@ -1,39 +1,16 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image
-} from 'react-native';
-import Login from '../Login/Login'
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-export default class Home extends React.Component {
-  constructor () {
-    super ()
-    this.state = {
-    }
-  }
+export default class PageOne extends Component {
   render() {
-    console.log('Home page')
+    const goToOilOptions = () => Actions.oiloptions({text: 'Hello World!'});
+    const goToAilments = () => Actions.ailments();
     return (
-      <View style={styles.container}>
-        <Text style={styles.homeText}>Home Page</Text>
-        <Image source={require('../../images/icons/pointer.jpg')} />
+      <View style={{margin: 128}}>
+        <Text onPress={goToOilOptions}>Click to go to Oil Options</Text>
+        <Text onPress={goToAilments}>Click to go to Ailments</Text>
       </View>
-    );
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  homeText: {
-    fontSize: 100,
-    height: 400,
-    width: 100,
-    color: 'red'
-  }
-});
