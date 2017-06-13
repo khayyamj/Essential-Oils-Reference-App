@@ -3,9 +3,54 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class PageOne extends Component {
+  // buttonOptions () {
+  //   const pageOptions = [
+  //     {
+  //       buttonTitle: '2 Oil Options',
+  //       page: goToOilOptions(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorRed]
+  //     },
+  //     {
+  //       buttonTitle: 'Ailments',
+  //       page: goToAilments(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorBlue]
+  //     },
+  //     {
+  //       buttonTitle: 'Education',
+  //       page: goToOilOptions(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorRed]
+  //     },
+  //     {
+  //       buttonTitle: 'Social',
+  //       page: goToOilOptions(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorRed]
+  //     },
+  //     {
+  //       buttonTitle: 'Button 5',
+  //       page: goToOilOptions(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorRed]
+  //     },
+  //     {
+  //       buttonTitle: 'Button 6',
+  //       page: goToOilOptions(),
+  //       styles: [styles.homePageOptionsText, styles.backgroundColorRed]
+  //     }
+  //   ];
+  //   pageOptions.map(button => {
+  //     return (
+  //       <TouchableOpacity
+  //         onPress={button.page}
+  //         style={button.style} >
+  //         <Text style={styles.homePageOptionsText}>{button.buttonTitle}</Text>
+  //       </TouchableOpacity>
+  //     )
+  //   })
+  // }
+
   render() {
     const goToOilOptions = () => Actions.oiloptions({text: 'Hello World!'});
     const goToAilments = () => Actions.ailments();
+
     return (
       <View style={styles.homePageContainer}>
         <View style={styles.homePageHeader}>
