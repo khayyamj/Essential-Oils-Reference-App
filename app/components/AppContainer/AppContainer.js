@@ -4,6 +4,7 @@ import { Router, Scene } from 'react-native-router-flux';
 import Home from '../Views/Home';
 import OilOptions from '../Views/OilOptions';
 import Ailments from '../Views/Ailments';
+import ProductDetails from '../Views/ProductDetails'
 
 export default class App extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class App extends Component {
           <Scene key="home" component={Home} title="Home" initial={true} />
           <Scene key="oiloptions" component={OilOptions} title="Oil Options" />
           <Scene key="ailments" component={Ailments} title="Ailments" />
+          <Scene key='productdetails' component={ProductDetails} title='Details' />
         </Scene>
       </Router>
     )

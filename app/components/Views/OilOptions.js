@@ -4,6 +4,7 @@ import {
   Text,
   View
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Login from '../Login/Login'
 
 export default class OilOptions extends React.Component {
@@ -16,7 +17,7 @@ export default class OilOptions extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Oil Options Page</Text>
-
+        <Text onPress={() => Actions.productdetails()}> Product Details</Text>
       </View>
     );
   }
