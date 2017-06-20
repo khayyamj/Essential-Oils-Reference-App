@@ -6,73 +6,83 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
+const oils = require('../data/oils.js');
 
 export default class ProductDetails extends Component {
   constructor (props) {
     super (props);
     this.state = {
-
+      oils: oils.oils
     }
+    this.displayOils = this.displayOils.bind(this)
+  }
+
+  displayOils () {
+    this.state.oils.map(oil => {
+      console.log('oil -> ', oil.name, oil.image)
+      return (
+        <View style={styles.listDetailsHeadline}>
+          <Image
+            source={require(oil.image)}
+            style={styles.listDetailsHeadlineImage} />
+          <Text style={styles.listDetailsHeadlineText}>{oil.name}</Text>
+        </View>
+        )
+    })
   }
 
   render() {
     return (
-      <View style={styles.productDetailsContainer}>
-        <View style={styles.productDetailsHeadline}>
-          <Image
-            source={require('../../../app/images/oils/lemon.jpeg')}
-            style={styles.productDetailsHeadlineImage} />
-          <Text style={styles.productDetailsHeadlineText}>{this.props.product} Details Page</Text>
-        </View>
-        <View style={styles.productDetailsBody}>
-          <Text style={styles.productDetailsBodyText}>Scientific Name: </Text>
-          <Text style={styles.productDetailsBodyText}>Synonyms: </Text>
-          <Text style={styles.productDetailsBodyText}>Properties: </Text>
-          <Text style={styles.productDetailsBodyText}>Description: </Text>
-        </View>
+      <View style={styles.listDetailsContainer}>
+        {this.displayOils()}
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  productDetailsContainer: {
-    flex: 1,
+  listDetailsContainer: {
+    // flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'grey',
-    paddingTop: 100
+    marginTop: 100,
+    paddingTop: 100,
+    borderBottomColor: 'black',
+    borderBottomWidth: 2
   },
-  productDetailsHeadline: {
+  listDetailsHeadline: {
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center',
-    height: 100
+    height: 100,
+    borderBottomWidth: 2,
+    borderBottomColor: 'black'
   },
-  productDetailsHeadlineImage: {
+  listDetailsHeadlineImage: {
     width: 100,
     height: 100,
     borderRadius: 50
   },
-  productDetailsHeadlineText: {
+  listDetailsHeadlineText: {
     justifyContent: 'center',
     alignSelf: 'center',
     paddingLeft: 10,
     fontSize: 16
   },
-  productDetailsBody: {
+  listDetailsBody: {
     backgroundColor: 'white',
     marginTop: 20,
     width: '100%',
     paddingLeft: 10,
     paddingRight: 10
   },
-  productHeadlineText: {
+  listHeadlineText: {
     fontSize: 50,
     fontWeight: 'bold',
     alignSelf: 'center'
   },
-  productDetailsBodyText: {
+  listDetailsBodyText: {
     paddingTop: 10,
     flexWrap: 'wrap'
   }
