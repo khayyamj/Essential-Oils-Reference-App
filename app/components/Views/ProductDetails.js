@@ -6,7 +6,8 @@ import {
   Image,
   TouchableHighlight
 } from 'react-native';
-const oils = require('../data/oils.js');
+const oils = require('../data/oils');
+const Images = require('../../images/oils/oilImages'); // images are bundled and must have a static reference
 
 export default class ProductDetails extends Component {
   constructor (props) {
@@ -18,14 +19,17 @@ export default class ProductDetails extends Component {
   }
 
   displayOils () {
-    this.state.oils.map(oil => {
-      console.log('oil -> ', oil.name, oil.image)
+    return this.state.oils.map(oil => {
+      console.log('oil -> ', oil.name)
+      const images = Images.default
+      console.log(images)
       return (
         <View style={styles.listDetailsHeadline}>
           <Image
-            source={require(oil.image)}
+            source={images[oil.name]}
             style={styles.listDetailsHeadlineImage} />
           <Text style={styles.listDetailsHeadlineText}>{oil.name}</Text>
+          <Text>TEXT</Text>
         </View>
         )
     })
@@ -42,18 +46,18 @@ export default class ProductDetails extends Component {
 
 const styles = StyleSheet.create({
   listDetailsContainer: {
-    // flex: 1,
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: 'grey',
-    marginTop: 100,
+    marginTop: 50,
     paddingTop: 100,
-    borderBottomColor: 'black',
-    borderBottomWidth: 2
+    borderColor: 'black',
+    borderWidth: 2
   },
   listDetailsHeadline: {
     flexDirection: 'row',
-    width: '100%',
+    // width: '100%',
     justifyContent: 'center',
     height: 100,
     borderBottomWidth: 2,
@@ -69,21 +73,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingLeft: 10,
     fontSize: 16
-  },
-  listDetailsBody: {
-    backgroundColor: 'white',
-    marginTop: 20,
-    width: '100%',
-    paddingLeft: 10,
-    paddingRight: 10
-  },
-  listHeadlineText: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    alignSelf: 'center'
-  },
-  listDetailsBodyText: {
-    paddingTop: 10,
-    flexWrap: 'wrap'
   }
 })

@@ -18,8 +18,7 @@ export const oils = [
     }],
     properties: ['Anticancer', 'Antidepressant', 'Antiseptic', 'Antifungal', 'Antioxidant', 'Antiviral', 'Astringent', 'Invigorating', 'Refreshing', 'Tonic'],
     description: 'Lemon has been used to fight food poisoning, malaria, and typhoid epidemics, and scurvy. Lemon has also been used to lower blood pressure, arthritis, and muscular aches and pains.',
-    systemsAffected: ['Digestive', 'Immune', 'Respiratory'],
-    image: '../../../app/images/oils/lemon.jpeg'
+    systemsAffected: ['Digestive', 'Immune', 'Respiratory']
  },
  {
     name: 'Frankincense',
@@ -38,7 +37,6 @@ export const oils = [
     }],
     properties: ['Anticatarrhal', 'Anticancer', 'Antidepressant', 'Anti-infectious', 'Anti-inflammatory', 'Antiseptic', 'Antitumor', 'Expectorant', 'Immune Stimulant', 'Sedative'],
     description: 'Frankincense is a holy oil in the Middle East. As an ingredient inth eholy incesne, it was used anciently during sacrificial ceremonies to help improve communication with the creator.',
-    systemsAffected: ['Emotional Balance', 'Immune', 'Nervous System', 'Skin'],
-    image: '../../../app/images/oils/lemon.jpeg'
+    systemsAffected: ['Emotional Balance', 'Immune', 'Nervous System', 'Skin']
   }
 ]
